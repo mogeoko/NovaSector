@@ -16,7 +16,25 @@ INSERT INTO `SS13_schema_revision` (`major`, `minor`) VALUES (5, 28);
 In any query remember to add a prefix to the table names if you use one.
 
 -----------------------------------------------------
+<<<<<<< HEAD
 Version 5.28, 03 December 2023, by distributivgesetz
+=======
+Version 5.27, 26 April 2024, by zephyrtfa
+Add the ip intel whitelist table
+```sql
+DROP TABLE IF EXISTS `ipintel_whitelist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ipintel_whitelist` (
+	`ckey` varchar(32) NOT NULL,
+	`admin_ckey` varchar(32) NOT NULL,
+	PRIMARY KEY (`ckey`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+```
+-----------------------------------------------------
+Version 5.26, 03 December 2023, by distributivgesetz
+>>>>>>> 16d221f86d4 (Fix a few mistakes I made (#82887))
 Set the default value of cloneloss to 0, as it's obsolete and it won't be set by blackbox anymore.
 ```sql
 ALTER TABLE `death` MODIFY COLUMN `cloneloss` SMALLINT(5) UNSIGNED DEFAULT '0';
